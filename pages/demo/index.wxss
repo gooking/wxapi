@@ -1,0 +1,8 @@
+.hello {
+  text-align: center;
+  margin-top:50rpx;
+}
+.course {
+  margin:30rpx;
+  font-size: 16px;
+}
