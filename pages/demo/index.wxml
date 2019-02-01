@@ -1,4 +1,4 @@
 <view class="hello">感谢使用！</view>
 <view class="course">1、复制 “wxapi” 文件夹到您的小程序根目录；</view>
-<view class="course">2、在您需要调用的页面，引入工具类：const WXAPI = require('/wxapi/main')；</view>
+<view class="course">2、在您需要调用的页面，引入工具类：const WXAPI = require('wxapi/main')；</view>
 <view class="course">3、根据接口文档直接调用对应的方法，如：WXAPI.queryMobileLocation('13500000000')；</view>
