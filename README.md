@@ -63,230 +63,226 @@ WXAPI.queryMobileLocation({ mobile: '13500000000' }).then(res => {
 
 ## 接口文档
 
-### 免费接口
+### 登录 & 注册
 
-#### 登录 & 注册
-
-##### 用户注册
+#### 用户注册
 
 > WXAPI.register(Object object)
 
-##### 用户登录
+#### 用户登录
 
 > WXAPI.login(Object object)
 
-##### 检测登录 token 是否有效
+#### 检测登录 token 是否有效
 
 > WXAPI.checkToken(token)
 
-#### 用户信息
+### 用户信息
 
-##### 绑定手机号码
+#### 绑定手机号码
 
 > WXAPI.bindMobile(Object object)
 
-##### 获取用户信息
+#### 获取用户信息
 
 > WXAPI.userDetail(token)
 
-##### 获取用户资产（余额、可用积分）信息
+#### 获取用户资产（余额、可用积分）信息
 
 > WXAPI.userAmount(token)
 
-##### 申请提现
+#### 申请提现
 
 > WXAPI.withDrawApply(money, token)
 
-#### 查询手机号码归属地
+### 查询手机号码归属地
 
 > WXAPI.queryMobileLocation(Object object)
 
-#### 读取 Banner 列表
+### 读取 Banner 列表
 
 > WXAPI.banners(Object object)
 
-#### 商品管理
+### 商品管理
 
-##### 获取所有的商品分类
+#### 获取所有的商品分类
 
 > WXAPI.goodsCategory()
 
-##### 获取商品列表
+#### 获取商品列表
 
 > WXAPI.goods(Object object)
 
-##### 获取商品详情信息
+#### 获取商品详情信息
 
 > WXAPI.goodsDetail(id)
 
-##### 获取商品价格（一般用户选择了不同规格尺寸后读取新价格）
+#### 获取商品价格（一般用户选择了不同规格尺寸后读取新价格）
 
 > WXAPI.goodsPrice(Object object)
 
-##### 获取商品的评价
+#### 获取商品的评价
 
 > WXAPI.goodsReputation(Object object)
 
-#### 读取后台设置的系统参数
+### 读取后台设置的系统参数
 
 > WXAPI.queryConfig(Object object)
 
-#### 根据视频编号读取视频详情
+### 根据视频编号读取视频详情
 
 > WXAPI.videoDetail(videoId)
 
-#### 优惠券管理
+### 优惠券管理
 
-##### 获取可领取优惠券
+#### 获取可领取优惠券
 
 > WXAPI.coupons(Object object)
 
-##### 领取优惠券
+#### 领取优惠券
 
 > WXAPI.fetchCoupons(Object object)
 
-##### 获取我的优惠券
+#### 获取我的优惠券
 
 > WXAPI.myCoupons(Object object)
 
-#### 公告管理
+### 公告管理
 
-##### 获取公告列表
+#### 获取公告列表
 
 > WXAPI.noticeList(Object object)
 
-##### 获取公告详情
+#### 获取公告详情
 
 > WXAPI.noticeDetail(id)
 
-#### 订单管理
+### 订单管理
 
-##### 我的订单统计
+#### 我的订单统计
 
 > WXAPI.orderStatistics(token)
 
-##### 创建订单
+#### 创建订单
 
 > WXAPI.orderCreate(Object object)
 
-##### 查询订单列表
+#### 查询订单列表
 
 > WXAPI.orderList(Object object)
 
-##### 查询订单详情
+#### 查询订单详情
 
 > WXAPI.orderDetail(id, token)
 
-##### 确认收货接口
+#### 确认收货接口
 
 > WXAPI.orderDelivery(orderId, token)
 
-##### 评价接口
+#### 评价接口
 
 > WXAPI.orderReputation(Object object)
 
-##### 关闭订单
+#### 关闭订单
 
 > WXAPI.orderClose(orderId, token)
 
-##### 使用余额支付订单
+#### 使用余额支付订单
 
 > WXAPI.orderPay(orderId, token)
 
-#### 积分管理
+### 积分管理
 
-##### 读取积分赠送规则
+#### 读取积分赠送规则
 
 > WXAPI.scoreRules(Object object)
 
-##### 签到
+#### 签到
 
 > WXAPI.scoreSign(token)
 
-##### 读取今日签到信息
+#### 读取今日签到信息
 
 > WXAPI.scoreTodaySignedInfo(token)
 
-##### 使用积分券兑换积分
+#### 使用积分券兑换积分
 
 > WXAPI.scoreExchange(number, token)
 
-#### 模板消息
+### 模板消息
 
-##### 记录 formid/预支付 id 用以后期发送消息
+#### 记录 formid/预支付 id 用以后期发送消息
 
 > WXAPI.addTempleMsgFormid(Object object)
 
-##### 给用户发送模板消息
+#### 给用户发送模板消息
 
 > WXAPI.sendTempleMsg(Object object)
 
-#### 收货地址管理
+### 收货地址管理
 
-##### 获取收货地址列表
+#### 获取收货地址列表
 
 > WXAPI.queryAddress(token)
 
-##### 添加收货地址
+#### 添加收货地址
 
 > WXAPI.addAddress(Object object)
 
-##### 更新收货地址
+#### 更新收货地址
 
 > WXAPI.updateAddress(Object object)
 
-##### 获取默认地址
+#### 获取默认地址
 
 > WXAPI.defaultAddress(token)
 
-##### 读取地址详细信息
+#### 读取地址详细信息
 
 > WXAPI.addressDetail(id, token)
 
-##### 删除
+#### 删除
 
 > WXAPI.deleteAddress(id, token)
 
-#### 在线支付
+### 在线支付
 
-##### 微信支付
+#### 微信支付
 
 > WXAPI.wxpay(Object object)
 
-##### 支付宝支付(半自动)
+#### 支付宝支付(半自动)
 
 > WXAPI.alipay(Object object)
 
-### vip 专属接口
+### 商品砍价
 
-#### 商品砍价
-
-##### 获取可砍价的商品列表
+#### 获取可砍价的商品列表
 
 > WXAPI.kanjiaList(Object object)
 
-##### 发起一个砍价
+#### 发起一个砍价
 
 > WXAPI.kanjiaJoin(kjid, token)
 
-##### 砍价详情
+#### 砍价详情
 
 > WXAPI.kanjiaDetail(kjid, joiner)
 
-##### 砍价助力
+#### 砍价助力
 
 > WXAPI.kanjiaHelp(kjid, joiner, token, remark)
 
-##### 我的助力信息
+#### 我的助力信息
 
 > WXAPI.kanjiaHelpDetail(kjid, joiner, token)
 
-#### 拼团功能
+### 拼团功能
 
-##### 开团接口
+#### 开团接口
 
 > WXAPI.pingtuanOpen(goodsId, token)
 
-##### 获取某个商品当前进行中的所有拼团
+#### 获取某个商品当前进行中的所有拼团
 
 > WXAPI.pingtuanList(goodsId)
