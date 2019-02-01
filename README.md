@@ -3,10 +3,10 @@
 
 交流QQ群: 629639122
 
-欢迎大家进群交流
+欢迎大家进群交流，文档持续更新中...
 
 ## 使用方法
-1、将本项目文件夹 “wxapi” 复制到您的小程序根目录；
+1、将本项目文件夹 "wxapi" 复制到您的小程序根目录；
 
 2、 修改 config.js 文件， subDomain 改为你自己的域名
 > 你可以 [免费开通后台账号](https://www.it120.cc/) ，开通后查看您的 subDomain 「[如何查看专属subDomain](https://www.it120.cc/info/faq/10468)」
@@ -22,11 +22,154 @@
 
 5、根据下面的文档调用接口即可，如：
 ```java
-WXAPI.queryMobileLocation('13500000000').then(res => {
+WXAPI.queryMobileLocation({ mobile: '13500000000' }).then(res => {
     console.log('接口成功返回:', res)
 }).catch(e => {
     console.error('接口调用异常:', e)
 })
 ```
-## 接口文档
-### 免费接口
+## 免费接口
+### 查询手机号码归属地 <font color=#990000>WXAPI.queryMobileLocation(Object object)</font>
+> 参数 mobile : 手机号码
+```java
+WXAPI.queryMobileLocation({ mobile: '13500000000' }).then(res => {
+    console.log('接口成功返回:', res)
+}).catch(e => {
+    console.error('接口调用异常:', e)
+})
+```
+```java
+{
+  "code": 0,
+  "data": {
+    "areaCode": "020",
+    "cardType": "GSM",
+    "cityName": "广州",
+    "code": 1350000,
+    "id": 60113,
+    "postCode": "510000",
+    "province": "广东",
+    "segmentName": "中国移动"
+  },
+  "msg": "success"
+}
+```
+
+### 读取后台设置的系统参数 <font color=#990000>WXAPI.queryConfig(Object object)</font>
+> 参数 key : 系统参数的编码
+```java
+WXAPI.queryConfig({ key: 'mallName' }).then(res => {
+    console.log('接口成功返回:', res)
+}).catch(e => {
+    console.error('接口调用异常:', e)
+})
+```
+```java
+{
+  "code": 0,
+  "data": {
+    "remark": "商城名称",
+    "value": "天使童装"
+  },
+  "msg": "success"
+}
+```
+
+### 读取积分赠送规则 <font color=#990000>WXAPI.scoreRules(Object object)</font>
+> 参数 code : 编码 【可不传】
+```java
+WXAPI.scoreRules().then(res => {
+    console.log('接口成功返回:', res)
+}).catch(e => {
+    console.error('接口调用异常:', e)
+})
+```
+```java
+{
+  "code": 0,
+  "data": [
+    {
+      "code": "goodReputation",
+      "codeStr": "好评送",
+      "confine": 0,
+      "score": 3
+    }
+  ],
+  "msg": "success"
+}
+```
+
+### 检测登录token是否有效 <font color=#990000>WXAPI.checkToken(token)</font>
+> 参数 token : 待检测的token
+```java
+WXAPI.checkToken('0d5d1afc-0808-432d-aff1-b3e6e1b9f8b1').then(res => {
+    console.log('接口成功返回:', res)
+}).catch(e => {
+    console.error('接口调用异常:', e)
+})
+```
+```java
+{
+  "code": 0,
+  "msg": "success"
+}
+```
+
+### 模板消息：记录formid/预支付id用以后期发送消息 <font color=#990000>WXAPI.addTempleMsgFormid(Object object)</font>
+> 参数 formId : 表单提交场景下，为 submit 事件带上的 formId；支付场景下，为支付的 prepay_id
+> 
+> 参数 type : form/pay ，分别代表支付还是表单提交
+> 
+> 参数 token : 登录接口返回的token
+
+```java
+WXAPI.addTempleMsgFormid({
+    token: '0d5d1afc-0808-432d-aff1-b3e6e1b9f8b1',
+    type: 'pay',
+    formId: '..........'
+})
+```
+```java
+{
+  "code": 0,
+  "msg": "success"
+}
+```
+
+### 模板消息：给用户发送模板消息 <font color=#990000>WXAPI.sendTempleMsg(Object object)</font>
+> 接口参数说明: [「查看接口文档」](https://api.it120.cc/doc.html)
+
+## vip专属接口
+### 获取可砍价的商品列表 <font color=#990000>WXAPI.kanjiaList(Object object)</font>
+> 参数 page : 获取第几页
+> 
+> 参数 pageSize : 每页获取几条数据
+```java
+WXAPI.kanjiaList().then(res => {
+    console.log('接口成功返回:', res)
+}).catch(e => {
+    console.error('接口调用异常:', e)
+})
+```
+```java
+{
+  "code": 0,
+  "data": {
+    "result": [
+      {
+        "dateAdd": "2018-04-01 17:10:19",
+        "dateEnd": "2222-05-01 12:00:00",
+        "goodsId": 6765,
+        "id": 3,
+        "minPrice": 40,
+        "number": 676500,
+        "numberBuy": 21,
+        "originalPrice": 500
+      }
+    ],
+    "totalRow": 1,
+    "totalPage": 1
+  },
+  "msg": "success"
+}
+```
