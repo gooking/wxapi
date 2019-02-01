@@ -131,7 +131,7 @@ WXAPI.queryMobileLocation({ mobile: '13500000000' }).then(res => {
 
 > WXAPI.queryConfig(Object object)
 
-####  根据视频编号读取视频详情
+#### 根据视频编号读取视频详情
 
 > WXAPI.videoDetail(videoId)
 
