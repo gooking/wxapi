@@ -65,6 +65,20 @@ WXAPI.queryMobileLocation({ mobile: '13500000000' }).then(res => {
 
 ### 免费接口
 
+#### 登录 & 注册
+
+##### 用户注册
+
+> WXAPI.register(Object object)
+
+##### 用户登录
+
+> WXAPI.login(Object object)
+
+##### 检测登录 token 是否有效
+
+> WXAPI.checkToken(token)
+
 #### 查询手机号码归属地
 
 > WXAPI.queryMobileLocation(Object object)
@@ -77,10 +91,6 @@ WXAPI.queryMobileLocation({ mobile: '13500000000' }).then(res => {
 
 > WXAPI.scoreRules(Object object)
 
-#### 检测登录 token 是否有效
-
-> WXAPI.checkToken(token)
-
 #### 模板消息
 
 ##### 记录 formid/预支付 id 用以后期发送消息
@@ -90,6 +100,10 @@ WXAPI.queryMobileLocation({ mobile: '13500000000' }).then(res => {
 ##### 给用户发送模板消息
 
 > WXAPI.sendTempleMsg(Object object)
+
+#### 微信支付
+
+> WXAPI.wxpay(Object object)
 
 ### vip 专属接口
 
