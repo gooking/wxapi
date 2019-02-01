@@ -38,7 +38,7 @@ WXAPI.queryMobileLocation({ mobile: '13500000000' }).then(res => {
 
 ### 查询手机号码归属地 <font color=#990000>WXAPI.queryMobileLocation(Object object)</font>
 
-> 参数 mobile : 手机号码
+> 参数 mobile : 手机号码
 
 ```java
 WXAPI.queryMobileLocation({ mobile: '13500000000' }).then(res => {
@@ -67,7 +67,7 @@ WXAPI.queryMobileLocation({ mobile: '13500000000' }).then(res => {
 
 ### 读取后台设置的系统参数 <font color=#990000>WXAPI.queryConfig(Object object)</font>
 
-> 参数 key : 系统参数的编码
+> 参数 key : 系统参数的编码
 
 ```java
 WXAPI.queryConfig({ key: 'mallName' }).then(res => {
@@ -90,7 +90,7 @@ WXAPI.queryConfig({ key: 'mallName' }).then(res => {
 
 ### 读取积分赠送规则 <font color=#990000>WXAPI.scoreRules(Object object)</font>
 
-> 参数 code : 编码 【可不传】
+> 参数 code : 编码 【可不传】
 
 ```java
 WXAPI.scoreRules().then(res => {
