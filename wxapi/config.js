@@ -1,5 +1,5 @@
 module.exports = {
-  version: "0.0.1",
-  note: '构建框架',
+  version: "1.0.0",
+  note: '完成商城基础接口',
   subDomain: "tz"
 }
