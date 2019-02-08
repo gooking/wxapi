@@ -95,7 +95,17 @@ WXAPI.queryMobileLocation({ mobile: '13500000000' }).then(res => {
 
 > WXAPI.withDrawApply(money, token)
 
-### 查询手机号码归属地
+### 基础书数据检索
+
+#### 读取所有省份
+
+> WXAPI.province()
+
+#### 读取下级省市区数据
+
+> WXAPI.nextRegion(pid)
+
+#### 查询手机号码归属地
 
 > WXAPI.queryMobileLocation(Object object)
 
