@@ -91,11 +91,15 @@ WXAPI.queryMobileLocation({ mobile: '13500000000' }).then(res => {
 
 > WXAPI.userAmount(token)
 
+#### 用户资金流水
+
+> WXAPI.cashLogs(Object object)
+
 #### 申请提现
 
 > WXAPI.withDrawApply(money, token)
 
-### 基础书数据检索
+### 基础数据检索
 
 #### 读取所有省份
 
@@ -211,6 +215,10 @@ WXAPI.queryMobileLocation({ mobile: '13500000000' }).then(res => {
 
 > WXAPI.scoreSign(token)
 
+#### 签到记录
+
+> WXAPI.scoreSignLogs(Object object)
+
 #### 读取今日签到信息
 
 > WXAPI.scoreTodaySignedInfo(token)
@@ -218,6 +226,10 @@ WXAPI.queryMobileLocation({ mobile: '13500000000' }).then(res => {
 #### 使用积分券兑换积分
 
 > WXAPI.scoreExchange(number, token)
+
+#### 积分明细记录
+
+> WXAPI.scoreLogs(Object object)
 
 ### 模板消息
 

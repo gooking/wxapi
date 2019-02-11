@@ -41,6 +41,9 @@ module.exports = {
       token
     })
   },
+  scoreSignLogs: (data) => {
+    return request('/score/sign/logs', true, 'post', data)
+  },
   scoreTodaySignedInfo: (token) => {
     return request('/score/today-signed', true, 'get', {
       token
@@ -51,6 +54,9 @@ module.exports = {
       number,
       token
     })
+  },
+  scoreLogs: (data) => {
+    return request('/score/logs', true, 'post', data)
   },
   kanjiaList: (data) => {
     return request('/shop/goods/kanjia/list', true, 'post', data)
@@ -253,5 +259,8 @@ module.exports = {
     return request('/common/region/v2/child', false, 'get', {
       pid
     })
+  },
+  cashLogs: (data) => {
+    return request('/user/cashLog', true, 'post', data)
   }
 }
