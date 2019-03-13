@@ -75,6 +75,9 @@
       - [获取用户资产（余额、可用积分）信息](#获取用户资产余额可用积分信息)
       - [用户资金流水](#用户资金流水)
       - [申请提现](#申请提现)
+    - [优惠买单](#优惠买单)
+      - [获取买单优惠信息](#获取买单优惠信息)
+      - [买单接口](#买单接口)
 
 <!-- /TOC -->
 
@@ -394,3 +397,13 @@ WXAPI.queryMobileLocation({ mobile: '13500000000' }).then(res => {
 #### 申请提现
 
 > WXAPI.withDrawApply(money, token)
+
+### 优惠买单
+
+#### 获取买单优惠信息
+
+> WXAPI.payBillDiscounts()
+
+#### 买单接口
+
+> WXAPI.payBill(Object object)
