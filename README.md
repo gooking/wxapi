@@ -91,6 +91,11 @@
       - [买单接口](#买单接口)
     - [微信小程序](#微信小程序)
       - [无限获取二维码](#无限获取二维码)
+    - [知识付费【虚拟交易】](#知识付费虚拟交易)
+      - [获取产品列表](#获取产品列表)
+      - [获取产品详情](#获取产品详情)
+      - [购买产品](#购买产品)
+      - [读取成交记录](#读取成交记录)
 
 <!-- /TOC -->
 
@@ -459,3 +464,21 @@ WXAPI.queryMobileLocation({ mobile: '13500000000' }).then(res => {
 #### 无限获取二维码
 
 > WXAPI.wxaQrcode(Object object)
+
+### 知识付费【虚拟交易】
+
+#### 获取产品列表
+
+> WXAPI.virtualTraderList(Object object)
+
+#### 获取产品详情
+
+> WXAPI.virtualTraderInfo(token, id)
+
+#### 购买产品
+
+> WXAPI.virtualTraderBuy(token, id)
+> 
+#### 读取成交记录
+
+> WXAPI.virtualTraderBuyLogs(Object object)

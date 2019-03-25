@@ -336,5 +336,17 @@ module.exports = {
   },
   wxaQrcode: (data) => {
     return request('/qrcode/wxa/unlimit', true, 'post', data)
+  },
+  virtualTraderList: (data) => {
+    return request('/virtualTrader/list', true, 'post', data)
+  },
+  virtualTraderInfo: (token, id) => {
+    return request('/virtualTrader/info', true, 'get', { token, id })
+  },
+  virtualTraderBuy: (token, id) => {
+    return request('/virtualTrader/buy', true, 'post', { token, id })
+  },
+  virtualTraderBuyLogs: (data) => {
+    return request('/virtualTrader/buy/logs', true, 'post', data)
   }
 }
