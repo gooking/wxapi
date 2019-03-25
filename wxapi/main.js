@@ -57,6 +57,9 @@ module.exports = {
   queryConfig: (data) => {
     return request('/config/get-value', true, 'get', data)
   },
+  queryConfigBatch: (keys) => {
+    return request('/config/values', true, 'get', { keys })
+  },
   scoreRules: (data) => {
     return request('/score/send/rule', true, 'post', data)
   },
@@ -81,6 +84,13 @@ module.exports = {
   },
   scoreLogs: (data) => {
     return request('/score/logs', true, 'post', data)
+  },
+  shareGroupGetScore: (referrer, encryptedData, iv) => {
+    return request('/score/share/wxa/group', true, 'post', {
+      referrer,
+      encryptedData,
+      iv
+    })
   },
   kanjiaList: (data) => {
     return request('/shop/goods/kanjia/list', true, 'post', data)
