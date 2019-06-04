@@ -17,6 +17,10 @@
       - [读取下级省市区数据](#读取下级省市区数据)
       - [查询手机号码归属地](#查询手机号码归属地)
     - [读取 Banner 列表](#读取-banner-列表)
+    - [CMS模块](#cms模块)
+      - [获取所有的CMS分类](#获取所有的cms分类)
+      - [获取CMS文章列表](#获取cms文章列表)
+      - [获取CMS文章详情](#获取cms文章详情)
     - [商品管理](#商品管理)
       - [获取所有的商品分类](#获取所有的商品分类)
       - [获取商品列表](#获取商品列表)
@@ -44,6 +48,9 @@
       - [评价接口](#评价接口)
       - [关闭订单](#关闭订单)
       - [使用余额支付订单](#使用余额支付订单)
+      - [申请退换货](#申请退换货)
+      - [申请退换货详情数据获取](#申请退换货详情数据获取)
+      - [申请退换货撤销](#申请退换货撤销)
     - [积分管理](#积分管理)
       - [读取积分赠送规则](#读取积分赠送规则)
       - [签到](#签到)
@@ -61,6 +68,8 @@
       - [更新收货地址](#更新收货地址)
       - [获取默认地址](#获取默认地址)
       - [读取地址详细信息](#读取地址详细信息)
+      - [获取默认地址v2.0](#获取默认地址v20)
+      - [读取地址详细信息v2.0](#读取地址详细信息v20)
       - [删除](#删除)
     - [在线支付](#在线支付)
       - [微信支付](#微信支付)
@@ -96,6 +105,11 @@
       - [获取产品详情](#获取产品详情)
       - [购买产品](#购买产品)
       - [读取成交记录](#读取成交记录)
+    - [门店[店铺]管理](#门店店铺管理)
+      - [获取门店列表](#获取门店列表)
+      - [获取门店详情](#获取门店详情)
+    - [文件管理](#文件管理)
+      - [上传文件](#上传文件)
 
 <!-- /TOC -->
 
@@ -206,6 +220,20 @@ WXAPI.queryMobileLocation({ mobile: '13500000000' }).then(res => {
 
 > WXAPI.banners(Object object)
 
+### CMS模块
+
+#### 获取所有的CMS分类
+
+> WXAPI.cmsCategories()
+
+#### 获取CMS文章列表
+
+> WXAPI.cmsArticles(Object object)
+
+#### 获取CMS文章详情
+
+> WXAPI.cmsArticleDetail(id)
+
 ### 商品管理
 
 #### 获取所有的商品分类
@@ -303,6 +331,18 @@ WXAPI.queryMobileLocation({ mobile: '13500000000' }).then(res => {
 
 > WXAPI.orderPay(orderId, token)
 
+#### 申请退换货
+
+> WXAPI.refundApply(token, orderId, type, logisticsStatus, reason, amount, remark, pic)
+
+#### 申请退换货详情数据获取
+
+> WXAPI.refundApplyDetail(token, orderId)
+
+#### 申请退换货撤销
+
+> WXAPI.refundApplyCancel(token, orderId)
+
 ### 积分管理
 
 #### 读取积分赠送规则
@@ -363,6 +403,14 @@ WXAPI.queryMobileLocation({ mobile: '13500000000' }).then(res => {
 #### 读取地址详细信息
 
 > WXAPI.addressDetail(id, token)
+
+#### 获取默认地址v2.0
+
+> WXAPI.defaultAddress_v2(token)
+
+#### 读取地址详细信息v2.0
+
+> WXAPI.addressDetail_v2(id, token)
 
 #### 删除
 
@@ -482,3 +530,19 @@ WXAPI.queryMobileLocation({ mobile: '13500000000' }).then(res => {
 #### 读取成交记录
 
 > WXAPI.virtualTraderBuyLogs(Object object)
+
+### 门店[店铺]管理
+
+#### 获取门店列表
+
+> WXAPI.shopSubList(Object object)
+
+#### 获取门店详情
+
+> WXAPI.shopSubdetail(id)
+
+### 文件管理
+
+#### 上传文件
+
+> WXAPI.uploadFile(token, tempFilePath)

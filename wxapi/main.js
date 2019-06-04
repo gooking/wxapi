@@ -54,9 +54,6 @@ module.exports = {
   queryMobileLocation: (data) => {
     return request('/common/mobile-segment/location', false, 'get', data)
   },
-  queryConfig: (data) => {
-    return request('/config/get-value', true, 'get', data)
-  },
   queryConfigBatch: (keys) => {
     return request('/config/values', true, 'get', { keys })
   },
@@ -323,7 +320,7 @@ module.exports = {
     return request('/config/vipLevel', true, 'get')
   },
   fxApply: (token, name, mobile) => {
-    return request('/saleDistribution/apply', true, 'post', {token, name, mobile})
+    return request('/saleDistribution/apply', true, 'post', { token, name, mobile })
   },
   fxApplyProgress: (token) => {
     return request('/saleDistribution/apply/progress', true, 'get', { token })
@@ -337,16 +334,61 @@ module.exports = {
   wxaQrcode: (data) => {
     return request('/qrcode/wxa/unlimit', true, 'post', data)
   },
-  virtualTraderList: (data) => {
-    return request('/virtualTrader/list', true, 'post', data)
+  uploadFile: (token, tempFilePath) => {
+    const uploadUrl = API_BASE_URL + '/' + CONFIG.subDomain + '/dfs/upload/file'
+    return new Promise((resolve, reject) => {
+      wx.uploadFile({
+        url: uploadUrl,
+        filePath: tempFilePath,
+        name: 'upfile',
+        formData: {
+          'token': token
+        },
+        success(res) {
+          resolve(JSON.parse(res.data))
+        },
+        fail(error) {
+          reject(error)
+        },
+        complete(aaa) {
+          // 加载完成
+        }
+      })
+    })
   },
-  virtualTraderInfo: (token, id) => {
-    return request('/virtualTrader/info', true, 'get', { token, id })
+  refundApply: (token, orderId, type, logisticsStatus, reason, amount, remark, pic) => {
+    return request('/order/refundApply/apply', true, 'post', {
+      token,
+      orderId,
+      type,
+      logisticsStatus,
+      reason,
+      amount,
+      remark,
+      pic
+    })
   },
-  virtualTraderBuy: (token, id) => {
-    return request('/virtualTrader/buy', true, 'post', { token, id })
+  refundApplyDetail: (token, orderId) => {
+    return request('/order/refundApply/info', true, 'get', {
+      token,
+      orderId
+    })
   },
-  virtualTraderBuyLogs: (data) => {
-    return request('/virtualTrader/buy/logs', true, 'post', data)
+  refundApplyCancel: (token, orderId) => {
+    return request('/order/refundApply/cancel', true, 'post', {
+      token,
+      orderId
+    })
+  },
+  cmsCategories: () => {
+    return request('/cms/category/list', true, 'get', {})
+  },
+  cmsArticles: (data) => {
+    return request('/cms/news/list', true, 'post', data)
+  },
+  cmsArticleDetail: (id) => {
+    return request('/cms/news/detail', true, 'get', {
+      id
+    })
   }
 }
