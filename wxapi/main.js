@@ -54,6 +54,9 @@ module.exports = {
   queryMobileLocation: (data) => {
     return request('/common/mobile-segment/location', false, 'get', data)
   },
+  queryConfigValue: (key) => {
+    return request('/config/value', true, 'get', { key })
+  },
   queryConfigBatch: (keys) => {
     return request('/config/values', true, 'get', { keys })
   },
@@ -296,6 +299,15 @@ module.exports = {
       token
     })
   },
+  withDrawDetail: (token, id) => {
+    return request('/user/withDraw/detail', true, 'get', {
+      token,
+      id
+    })
+  },
+  withDrawLogs: (data) => {
+    return request('/user/withDraw/list', true, 'post', data)
+  },
   province: () => {
     return request('/common/region/v2/province', false, 'get')
   },
@@ -399,5 +411,17 @@ module.exports = {
   },
   invoiceDetail: (token, id) => {
     return request('/invoice/info', true, 'get', { token, id })
+  },
+  depositList: (data) => {
+    return request('/deposit/list', true, 'post', data)
+  },
+  payDeposit: (data) => {
+    return request('/deposit/pay', true, 'post', data)
+  },
+  depositInfo: (token, id) => {
+    return request('/deposit/info', true, 'get', { token, id })
+  },
+  depositBackApply: (token, id) => {
+    return request('/deposit/back/apply', true, 'post', { token, id })
   }
 }
