@@ -423,5 +423,17 @@ module.exports = {
   },
   depositBackApply: (token, id) => {
     return request('/deposit/back/apply', true, 'post', { token, id })
+  },
+  fetchShops: (data) => {
+    return request('/shop/subshop/list', true, 'post', data)
+  },
+  shopSubdetail: (id) => {
+    return request('/shop/subshop/detail/v2', true, 'get', { id })
+  },
+  addComment: (data) => {
+    return request('/comment/add', true, 'post', data)
+  },
+  modifyUserInfo: (data) => {
+    return request('/user/modify', true, 'post', data)
   }
 }

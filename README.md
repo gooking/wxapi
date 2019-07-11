@@ -12,6 +12,7 @@
     - [用户信息](#用户信息)
       - [绑定手机号码](#绑定手机号码)
       - [获取用户信息](#获取用户信息)
+      - [修改用户资料](#修改用户资料)
     - [基础数据检索](#基础数据检索)
       - [读取所有省份](#读取所有省份)
       - [读取下级省市区数据](#读取下级省市区数据)
@@ -95,6 +96,15 @@
       - [获取用户资产（余额、可用积分）信息](#获取用户资产余额可用积分信息)
       - [用户资金流水](#用户资金流水)
       - [申请提现](#申请提现)
+      - [发票管理](#发票管理)
+        - [申请发票](#申请发票)
+        - [申请的发票列表](#申请的发票列表)
+        - [发票详情](#发票详情)
+      - [押金管理](#押金管理)
+        - [支付押金](#支付押金)
+        - [读取押金列表](#读取押金列表)
+        - [押金详情](#押金详情)
+        - [申请退回押金](#申请退回押金)
     - [优惠买单](#优惠买单)
       - [获取买单优惠信息](#获取买单优惠信息)
       - [买单接口](#买单接口)
@@ -110,6 +120,8 @@
       - [获取门店详情](#获取门店详情)
     - [文件管理](#文件管理)
       - [上传文件](#上传文件)
+    - [留言 & 反馈](#留言--反馈)
+      - [提交留言反馈](#提交留言反馈)
 
 <!-- /TOC -->
 
@@ -201,6 +213,10 @@ WXAPI.queryMobileLocation({ mobile: '13500000000' }).then(res => {
 #### 获取用户信息
 
 > WXAPI.userDetail(token)
+
+#### 修改用户资料
+
+> WXAPI.modifyUserInfo(Object object)
 
 ### 基础数据检索
 
@@ -497,6 +513,24 @@ WXAPI.queryMobileLocation({ mobile: '13500000000' }).then(res => {
 
 > WXAPI.withDrawApply(money, token)
 
+#### 发票管理
+##### 申请发票
+> WXAPI.invoiceApply(Object object)
+##### 申请的发票列表
+> WXAPI.invoiceList(Object object)
+##### 发票详情
+> WXAPI.invoiceDetail(token, id)
+
+#### 押金管理
+##### 支付押金
+> WXAPI.payDeposit(Object object)
+##### 读取押金列表
+> WXAPI.depositList(Object object)
+##### 押金详情
+> WXAPI.depositInfo(token, id)
+##### 申请退回押金
+> WXAPI.depositBackApply(token, id)
+
 ### 优惠买单
 
 #### 获取买单优惠信息
@@ -535,7 +569,7 @@ WXAPI.queryMobileLocation({ mobile: '13500000000' }).then(res => {
 
 #### 获取门店列表
 
-> WXAPI.shopSubList(Object object)
+> WXAPI.fetchShops(Object object)
 
 #### 获取门店详情
 
@@ -546,3 +580,9 @@ WXAPI.queryMobileLocation({ mobile: '13500000000' }).then(res => {
 #### 上传文件
 
 > WXAPI.uploadFile(token, tempFilePath)
+
+### 留言 & 反馈
+
+#### 提交留言反馈
+
+> WXAPI.addComment(Object object)
