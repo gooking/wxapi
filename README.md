@@ -140,7 +140,7 @@
 | 天使童装| 舔果果小铺 | 面馆风格小程序 | AI名片 |
 | :------:| :------: | :------: | :------: |
 | <img src="https://cdn.it120.cc/apifactory/2019/06/28/a8304003-3218-4a47-95cf-84d82ebdc07b.jpg" width="200px"> | <img src="https://cdn.it120.cc/apifactory/2018/04/01/b7b8f5a0fcfc72454ade8510ab929717.jpg" width="200px"> | <img src="https://cdn.it120.cc/apifactory/2019/03/29/9e30cfe31eabcd218eb9c434f17e9295.jpg" width="200px"> | <img src="https://cdn.it120.cc/apifactory/2018/12/18/c2324da4eea91602f385db5b523b13ca.jpg" width="200px"> | 
-| [开源地址](https://github.com/EastWorld/wechat-app-mall) | [开源地址](https://github.com/qindiandadudu/TianguoguoXiaopu) | [开源地址](https://gitee.com/javazj/noodle_shop_procedures) | [开源地址](https://github.com/gooking/visitingCard) |
+| [开源地址](https://github.com/EastWorld/wechat-app-mall) | [开源地址](hhttps://github.com/walcer/TianguoguoXiaopu) | [开源地址](https://gitee.com/javazj/noodle_shop_procedures) | [开源地址](https://github.com/gooking/visitingCard) |
 
 &nbsp;
 
